@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "82963945302",
+    "project_id": "smash-topo",
+    "storage_bucket": "smash-topo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82963945302:android:1ec5da2ed0d51bf880a8f7",
+        "android_client_info": {
+          "package_name": "com.example.smash_topo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82963945302-am61qta6smg50ncm8uev1ph3d2mhabfi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smash_topo",
+            "certificate_hash": "58546b3e0af9ee9a5c73b394a2f12a02b5a0a707"
+          }
+        },
+        {
+          "client_id": "82963945302-029cohead8uj7g84gcoem69frli49ck3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm0yxuiz4e5xcCAImVjbOFeViwqLOyXu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82963945302-029cohead8uj7g84gcoem69frli49ck3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
