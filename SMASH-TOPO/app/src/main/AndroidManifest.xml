@@ -9,19 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
-        <activity android:name=".Splash">
+        <activity
+            android:name=".Registro"
+            android:exported="false" />
+        <activity android:name=".Splash"
+            android:exported="true">
             <intent-filter>
+
                 <!-- ESTAS LINEAS SIRVEN PARA QUE ESTA SEA LA PRIMERA ACTIVIDAD EN EJECUTARSE -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
+            android:theme="@style/Theme.SMASH_TOPO.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
