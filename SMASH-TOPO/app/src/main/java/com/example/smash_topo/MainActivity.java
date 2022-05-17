@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     ImageButton boton_login,boton_registro;
 
     @Override
+    public void onBackPressed(){
+        //En caso de querer permitir volver atrás usa esta llamada: super.onBackPressed();
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
