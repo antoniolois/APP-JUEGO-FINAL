@@ -8,45 +8,74 @@
     android:background="#1FB0FE"
     >
 
+    <ImageButton
+        android:id="@+id/boton_registro"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="224dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/boton_redondeado"
+        android:contextClickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_boton_login"
+        app:srcCompat="@drawable/topo_login" />
+
+    <TextView
+        android:id="@+id/text_boton_registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="@string/registro_boton_String"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_registro" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView2"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="415dp"
+        android:layout_height="206dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/fingerprint_animation" />
+        app:lottie_rawRes="@raw/controller_animation">
+
+    </com.airbnb.lottie.LottieAnimationView>
+
 
     <ImageButton
         android:id="@+id/boton_login"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="126dp"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="229dp"
+        android:layout_height="155dp"
+        android:background="@drawable/boton_redondeado"
+        android:contextClickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView2"
-        app:layout_optimizationLevel="ratio"
-        app:srcCompat="@drawable/topo_boton_login"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/topo_registro" />
 
-    <ImageButton
-        android:id="@+id/boton_registro"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="107dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/text_boton_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="@string/login_boton_string"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/topo_boton_registro"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/boton_login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
