@@ -113,12 +113,12 @@ public class Registro extends AppCompatActivity {
                         Toast.makeText(Registro.this, "USUARIO REGISTRADO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
                         finish();
                     }else{
-                        Toast.makeText(Registro.this, "HA OCURRIDO UN ERROR", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registro.this, "Error", Toast.LENGTH_LONG).show();
                     }
 
 
                 }).addOnFailureListener(e -> { // EN CASO DE QUE EL REGISTRO SE EFECTUE DE MANERA INCORRECTA SE MUESTRA UN MENSAJE EN PANTALLA
-            Toast.makeText(Registro.this, "Error: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(Registro.this, "Error: "+e.getMessage(), Toast.LENGTH_LONG).show();
                 });
     }
 
