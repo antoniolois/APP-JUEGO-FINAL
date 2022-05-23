@@ -33,7 +33,7 @@ public class RegistroClass extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        editTextTextEmailAddress= findViewById(R.id.editTextTextEmailAddress); // CORREO ELECTRONICO
+        editTextTextEmailAddress= findViewById(R.id.editTextTextEmailAddressLogin); // CORREO ELECTRONICO
         editTextTextPassword= findViewById(R.id.editTextTextPasswordLogin); // CONTRASEÑA
         editTextTextPersonName= findViewById(R.id.editTextTextPersonNameLogin); // NOMBRE
         fecha_registro= findViewById(R.id.fecha_registro); // FECHA DE REGISTRO
@@ -70,7 +70,7 @@ public class RegistroClass extends AppCompatActivity {
                 RegistrarUsuario(correoElectronico,contraseñaCorreo,nombreUsuario);
             }
 
-        });
+        }); // fin click boton registar
 
 
 

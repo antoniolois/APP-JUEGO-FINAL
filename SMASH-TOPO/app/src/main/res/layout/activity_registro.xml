@@ -27,13 +27,13 @@
             android:layout_height="51dp"
             android:layout_marginStart="58dp"
             android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddressLogin"
             app:layout_constraintHorizontal_bias="0.552"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"
             app:srcCompat="@drawable/email_icon" />
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/editTextTextEmailAddressLogin"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginStart="156dp"
@@ -49,65 +49,83 @@
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
 
         <!-- CONTRASEÑA CORREO ELECTRONICO -->
+
+        <!-- NOMBRE DE USUARIO -->
+
         <ImageView
             android:id="@+id/password_icon"
             android:layout_width="90dp"
             android:layout_height="50dp"
-            android:layout_marginStart="58dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPasswordLogin"
-            app:layout_constraintHorizontal_bias="0.666"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/person_icon_login"
+            app:layout_constraintEnd_toStartOf="@+id/etPasswordLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_icon"
             app:srcCompat="@drawable/password_icon" />
-        <EditText
-            android:id="@+id/editTextTextPasswordLogin"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="156dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="55dp"
-            android:autofillHints="Password"
-            android:hint="@string/password_registro"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColorHint="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
-        <!-- NOMBRE DE USUARIO -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etPasswordLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="#000000"
+            app:endIconTint="#000000"
+            app:hintTextColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonNameLogin"
+            app:layout_constraintStart_toEndOf="@+id/password_icon"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddressLogin"
+            app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/editTextTextPasswordLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Password"
+                    android:hint="@string/password_registro"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:textColorHint="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- BOTON REGISTRO -->
+
         <ImageView
             android:id="@+id/person_icon_login"
             android:layout_width="71dp"
             android:layout_height="52dp"
             android:layout_marginStart="69dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="35dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonNameLogin"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password_icon"
             app:srcCompat="@drawable/name_icon" />
+
         <EditText
             android:id="@+id/editTextTextPersonNameLogin"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginStart="156dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="35dp"
             android:layout_marginEnd="55dp"
             android:hint="@string/name"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPasswordLogin" />
-
-
-        <!-- BOTON REGISTRO -->
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout" />
 
         <Button
             android:id="@+id/boton_registar"
