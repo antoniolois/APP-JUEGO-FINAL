@@ -4,12 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro"
+    tools:context=".RegistroClass"
     android:background="#1FB0FE"
     >
-
-
-
 
         <!-- CORREO ELECTRONICO -->
         <com.airbnb.lottie.LottieAnimationView
@@ -24,7 +21,17 @@
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/register_animation" />
-
+        <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="60dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
+            app:layout_constraintHorizontal_bias="0.552"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"
+            app:srcCompat="@drawable/email_icon" />
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="200dp"
@@ -41,6 +48,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
 
+        <!-- CONTRASEÑA CORREO ELECTRONICO -->
         <ImageView
             android:id="@+id/password_icon"
             android:layout_width="90dp"
@@ -48,14 +56,13 @@
             android:layout_marginStart="58dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextPasswordLogin"
             app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_icon"
             app:srcCompat="@drawable/password_icon" />
-
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/editTextTextPasswordLogin"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginStart="156dp"
@@ -71,21 +78,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
+        <!-- NOMBRE DE USUARIO -->
         <ImageView
-            android:id="@+id/person_icon_registro"
+            android:id="@+id/person_icon_login"
             android:layout_width="71dp"
             android:layout_height="52dp"
             android:layout_marginStart="69dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonNameLogin"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password_icon"
             app:srcCompat="@drawable/name_icon" />
-
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextTextPersonNameLogin"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginStart="156dp"
@@ -97,23 +104,8 @@
             android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPasswordLogin" />
 
-        <ImageView
-            android:id="@+id/email_icon"
-            android:layout_width="60dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="58dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
-            app:layout_constraintHorizontal_bias="0.552"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"
-            app:srcCompat="@drawable/email_icon" />
-
-        <!-- CONTRASEÑA CORREO ELECTRONICO -->
-
-        <!-- NOMBRE DE USUARIO -->
 
         <!-- BOTON REGISTRO -->
 
@@ -132,6 +124,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fecha_registro" />
 
+        <!-- FECHA DE REGISTRO -->
         <TextView
             android:id="@+id/fecha_registro"
             android:layout_width="wrap_content"
@@ -146,7 +139,7 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonNameLogin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

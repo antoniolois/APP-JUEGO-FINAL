@@ -1,21 +1,15 @@
 package com.example.smash_topo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -25,9 +19,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
-public class Registro extends AppCompatActivity {
+public class RegistroClass extends AppCompatActivity {
 
     // DECLARACIÓN DE VARIABLES
     EditText editTextTextEmailAddress, editTextTextPassword, editTextTextPersonName;
@@ -41,8 +34,8 @@ public class Registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
 
         editTextTextEmailAddress= findViewById(R.id.editTextTextEmailAddress); // CORREO ELECTRONICO
-        editTextTextPassword= findViewById(R.id.editTextTextPassword); // CONTRASEÑA
-        editTextTextPersonName= findViewById(R.id.editTextTextPersonName); // NOMBRE
+        editTextTextPassword= findViewById(R.id.editTextTextPasswordLogin); // CONTRASEÑA
+        editTextTextPersonName= findViewById(R.id.editTextTextPersonNameLogin); // NOMBRE
         fecha_registro= findViewById(R.id.fecha_registro); // FECHA DE REGISTRO
         boton_registar= findViewById(R.id.boton_registar); // BOTON PARA REGISTRARSE
 
@@ -109,16 +102,16 @@ public class Registro extends AppCompatActivity {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference reference = database.getReference("DATABASE JUGADORES REGISTRADOS");
                         reference.child(uidStringUser).setValue(DatosPLAYER); //almacenamiento de los datos del jugador
-                        startActivity(new Intent(Registro.this,Menu.class));
-                        Toast.makeText(Registro.this, "USUARIO REGISTRADO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegistroClass.this,Menu.class));
+                        Toast.makeText(RegistroClass.this, "USUARIO REGISTRADO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
                         finish();
                     }else{
-                        Toast.makeText(Registro.this, "Error", Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegistroClass.this, "Error", Toast.LENGTH_LONG).show();
                     }
 
 
                 }).addOnFailureListener(e -> { // EN CASO DE QUE EL REGISTRO SE EFECTUE DE MANERA INCORRECTA SE MUESTRA UN MENSAJE EN PANTALLA
-            Toast.makeText(Registro.this, "Error: "+e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(RegistroClass.this, "Error: "+e.getMessage(), Toast.LENGTH_LONG).show();
                 });
     }
 
