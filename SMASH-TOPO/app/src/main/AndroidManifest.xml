@@ -12,13 +12,15 @@
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
         <activity
             android:name=".LoginClass"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
-        <service android:name=".BackgroundMusic" />
+
 
         <activity
             android:name=".MenuClass"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegistroClass"
             android:exported="false"

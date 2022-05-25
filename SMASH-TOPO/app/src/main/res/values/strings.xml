@@ -16,5 +16,20 @@
     <string name="name">Nombre</string>
     <string name="login_boton_string">LOGIN</string>
     <string name="registro_boton_String">REGISTRO</string>
+
+
+    <!-- PANTALLA REGISTRO-->
     <string name="boton_cerrar_sesion_menu">CERRAR SESIÓN</string>
+
+    <string name="cantidad_topos">--</string>
+    <string name="topos_puntuacion_jugaor">TOPOS APLASTADOS :</string>
+    <string name="menu_titulo">MENÚ</string>
+    <string name="userID">--</string>
+    <string name="correoElectronico_menu">--</string>
+    <string name="nombreUsuario_menu">--</string>
+
+    <string name="boton_jugar_menu">JUGAR</string>
+    <string name="puntuaciones_jugadores">Clasifiaciones</string>
+
+
 </resources>

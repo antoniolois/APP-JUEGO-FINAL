@@ -49,7 +49,7 @@ public class MenuClass extends AppCompatActivity {
             Toast.makeText(this, "Jugador actualemente logueado", Toast.LENGTH_SHORT).show();
 
         } else  {
-            startActivity(new Intent(MenuClass.this, RegistroClass.class));
+            startActivity(new Intent(MenuClass.this, MainActivity.class));
             finish(); }
 
     }
