@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        boton_login= findViewById(R.id.boton_login);
+        boton_login= findViewById(R.id.boton_cerrar_sesion_menu);
         boton_registro= findViewById(R.id.boton_registro);
 
         boton_login.setOnClickListener(view -> {// AL HACER CLCIK EN EL BOTÓN REGISTRO SE EJECUTA LA CLASE LOGIN

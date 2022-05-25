@@ -40,7 +40,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="60dp"
             android:layout_marginTop="40dp"
-            app:layout_constraintBottom_toTopOf="@+id/boton_login"
+            app:layout_constraintBottom_toTopOf="@+id/boton_cerrar_sesion_menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/person_icon_login"
             app:layout_constraintVertical_bias="0.247"
@@ -107,7 +107,7 @@
 
         <!-- BOTON LOGIN -->
         <Button
-            android:id="@+id/boton_login"
+            android:id="@+id/boton_cerrar_sesion_menu"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="105dp"

@@ -16,4 +16,5 @@
     <string name="name">Nombre</string>
     <string name="login_boton_string">LOGIN</string>
     <string name="registro_boton_String">REGISTRO</string>
+    <string name="boton_cerrar_sesion_menu">CERRAR SESIÓN</string>
 </resources>

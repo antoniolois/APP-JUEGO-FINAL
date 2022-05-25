@@ -17,14 +17,14 @@
         <service android:name=".BackgroundMusic" />
 
         <activity
-            android:name=".Menu"
+            android:name=".MenuClass"
             android:exported="false" />
         <activity
             android:name=".RegistroClass"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Splash"
+            android:name=".SplashClass"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

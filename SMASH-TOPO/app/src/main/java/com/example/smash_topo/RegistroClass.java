@@ -102,7 +102,7 @@ public class RegistroClass extends AppCompatActivity {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference reference = database.getReference("DATABASE JUGADORES REGISTRADOS");
                         reference.child(uidStringUser).setValue(DatosPLAYER); //almacenamiento de los datos del jugador
-                        startActivity(new Intent(RegistroClass.this,Menu.class));
+                        startActivity(new Intent(RegistroClass.this, MenuClass.class));
                         Toast.makeText(RegistroClass.this, "USUARIO REGISTRADO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
                         finish();
                     }else{
