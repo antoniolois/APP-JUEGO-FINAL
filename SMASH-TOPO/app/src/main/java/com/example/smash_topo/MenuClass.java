@@ -61,4 +61,3 @@ public class MenuClass extends AppCompatActivity {
         Toast.makeText(this, "Sesión cerrada exictosamente", Toast.LENGTH_SHORT).show();
          }
     }
-}
