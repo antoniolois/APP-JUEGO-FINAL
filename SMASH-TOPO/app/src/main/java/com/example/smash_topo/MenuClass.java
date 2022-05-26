@@ -38,22 +38,7 @@ public class MenuClass extends AppCompatActivity {
         //En caso de querer permitir volver atrás usa esta llamada: super.onBackPressed();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (mp==null){
-            mp= MediaPlayer.create(MenuClass.this,R.raw.victorymenusound);
-
-        }else if(!mp.isPlaying()){
-            mp.start();
-        }
-
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mp.pause();
-    }
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
