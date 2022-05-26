@@ -10,17 +10,18 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView3"
-        android:layout_width="162dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="87dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="109dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/cantidadTopos"
         app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/topo_mareado" />
+        app:lottie_rawRes="@raw/trophy_animation" />
 
     <TextView
         android:id="@+id/puntuacionJugadorActual"
@@ -37,69 +38,145 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/cantidadTopos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="2dp"
         android:fontFamily="@font/monocoque_demo"
         android:text="@string/cantidad_topos"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual" />
 
-    <ScrollView
-        android:layout_width="408dp"
-        android:layout_height="358dp"
+    <TextView
+        android:id="@+id/userID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="198dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="@string/cantidad_topos"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="198dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="@string/cantidad_topos"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userID" />
+
+    <TextView
+        android:id="@+id/correoElectronicoUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="198dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="@string/cantidad_topos"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="215dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correoElectronicoUser"
         app:layout_constraintVertical_bias="1.0">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <Button
+            android:id="@+id/botonJugarMenu"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:fontFamily="@font/monocoque_demo"
+            android:text="@string/boton_jugar_menu"
+            android:textColor="#000000"
+            app:cornerRadius="12dp"
+            app:iconTint="#000000"
+            app:strokeColor="#FFBE0B"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/clasifiacionJugadoresPuntuacion"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:fontFamily="@font/monocoque_demo"
+            android:text="@string/puntuaciones_jugadores"
+            android:textColor="#000000"
+            app:cornerRadius="12dp"
+            app:iconTint="#000000"
+            app:strokeColor="#FFBE0B"
+            app:strokeWidth="3dp" />
+
+
+        <!-- BOTON CERRAR SESIÓN -->
+        <Button
+            android:id="@+id/boton_cerrar_sesion_menu"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:backgroundTint="#F04646"
+            android:text="@string/boton_cerrar_sesion_menu"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="149dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+        app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual"
+        app:srcCompat="@drawable/topo_golpeado3" />
 
-            <Button
-                android:id="@+id/clasifiacionJugadoresPuntuacion"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#FFFFFF"
-                android:backgroundTintMode="src_in"
-                android:text="@string/puntuaciones_jugadores"
-                android:textColor="#000000"
-                app:cornerRadius="12dp"
-                android:fontFamily="@font/monocoque_demo"
-                app:iconTint="#000000"
-                app:strokeColor="#FFBE0B"
-                app:strokeWidth="3dp" />
-            <!-- BOTON CERRAR SESIÓN -->
-            <Button
-                android:id="@+id/boton_cerrar_sesion_menu"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#F04646"
-                android:text="@string/boton_cerrar_sesion_menu"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                app:cornerRadius="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
