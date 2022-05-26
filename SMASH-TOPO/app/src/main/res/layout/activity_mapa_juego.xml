@@ -20,65 +20,81 @@
         <!-- MARCADOR -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_height="153dp"
             android:layout_marginBottom="5dp"
             android:gravity="center_vertical|center"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/contadorEscenario"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:fontFamily="@font/monocoque_demo"
-                android:gravity="center_vertical"
-                android:text="@string/contadorEscenario"
-                android:textColor="#000000"
-                android:textSize="30sp" />
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="vertical">
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:scaleType="centerInside"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/martilloescenariojugador" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/martilloescenariojugador" />
+
+                <TextView
+                    android:id="@+id/contadorEscenario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/monocoque_demo"
+                    android:gravity="center_vertical"
+                    android:text="@string/contadorEscenario"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
+
+
+            </LinearLayout>
 
 
             <TextView
                 android:id="@+id/nombreJugadorEscenario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/monocoque_demo"
                 android:gravity="center_vertical"
                 android:text="@string/nombreJugadorEscenario"
                 android:textColor="#000000"
                 android:textSize="30sp" />
 
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="85dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:scaleType="centerInside"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/timeescenario" />
-
-            <TextView
-                android:id="@+id/tiempoEscenario"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/monocoque_demo"
-                android:gravity="center_vertical"
-                android:text="@string/tiempoEscenario"
-                android:textColor="#000000"
-                android:textSize="30sp" />
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="vertical">
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/timeescenario" />
+
+                <TextView
+                    android:id="@+id/tiempoEscenario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/monocoque_demo"
+                    android:gravity="center_vertical"
+                    android:text="@string/tiempoEscenario"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -87,8 +103,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/topoescenario"

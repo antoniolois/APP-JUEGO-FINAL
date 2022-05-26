@@ -12,7 +12,8 @@
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
         <activity
             android:name=".MapaJuego"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LoginClass"
             android:exported="false"
