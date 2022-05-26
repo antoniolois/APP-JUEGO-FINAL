@@ -11,12 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
         <activity
+            android:name=".MapaJuego"
+            android:exported="false" />
+        <activity
             android:name=".LoginClass"
             android:exported="false"
             android:screenOrientation="portrait" />
-
-
-
         <activity
             android:name=".MenuClass"
             android:exported="false"

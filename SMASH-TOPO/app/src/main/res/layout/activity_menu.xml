@@ -10,11 +10,13 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView3"
-        android:layout_width="109dp"
-        android:layout_height="101dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/cantidadTopos"
@@ -44,65 +46,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="2dp"
         android:fontFamily="@font/monocoque_demo"
         android:text="@string/cantidad_topos"
         android:textColor="#000000"
-        android:textSize="60sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual" />
 
     <TextView
         android:id="@+id/userID"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="198dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="35dp"
         android:fontFamily="@font/monocoque_demo"
-        android:text="@string/cantidad_topos"
+        android:text="--"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correoJugadorMenu" />
+
+    <TextView
+        android:id="@+id/correoJugadorMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="--"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreJugadorMenu" />
+
+    <TextView
+        android:id="@+id/nombreJugadorMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/monocoque_demo"
+        android:text="--"
+        android:textAlignment="center"
+        android:textColor="#FFBE0B"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
 
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="198dp"
-        android:fontFamily="@font/monocoque_demo"
-        android:text="@string/cantidad_topos"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userID" />
-
-    <TextView
-        android:id="@+id/correoElectronicoUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="198dp"
-        android:fontFamily="@font/monocoque_demo"
-        android:text="@string/cantidad_topos"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="215dp"
         android:layout_marginBottom="50dp"
@@ -111,9 +115,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correoElectronicoUser"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <Button
@@ -127,6 +129,7 @@
             android:fontFamily="@font/monocoque_demo"
             android:text="@string/boton_jugar_menu"
             android:textColor="#000000"
+            android:textSize="20sp"
             app:cornerRadius="12dp"
             app:iconTint="#000000"
             app:strokeColor="#FFBE0B"
@@ -143,6 +146,7 @@
             android:fontFamily="@font/monocoque_demo"
             android:text="@string/puntuaciones_jugadores"
             android:textColor="#000000"
+            android:textSize="20sp"
             app:cornerRadius="12dp"
             app:iconTint="#000000"
             app:strokeColor="#FFBE0B"

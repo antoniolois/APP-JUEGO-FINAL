@@ -18,7 +18,7 @@
     <string name="registro_boton_String">REGISTRO</string>
 
 
-    <!-- PANTALLA REGISTRO-->
+    <!-- PANTALLA MENU-->
     <string name="boton_cerrar_sesion_menu">CERRAR SESIÓN</string>
 
     <string name="cantidad_topos">--</string>
@@ -30,6 +30,15 @@
 
     <string name="boton_jugar_menu">JUGAR</string>
     <string name="puntuaciones_jugadores">Clasifiaciones</string>
+
+
+
+    <!-- PANTALLA ESCENARIO-->
+    <string name="contadorEscenario">0</string>
+    <string name="nombreJugadorEscenario">------</string>
+    <string name="tiempoEscenario">0</string>
+
+
 
 
 </resources>

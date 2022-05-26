@@ -1,14 +1,14 @@
 package com.example.smash_topo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,9 +27,33 @@ public class MenuClass extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseJugadoresRegistrados;
 
-    Button CerrarSesion,Jugar,Clasificaciones;
-    TextView cantidadTopos,userID,userName,correoElectronicoUser;
+    MediaPlayer mp;
 
+
+    Button CerrarSesion,Jugar,Clasificaciones;
+    TextView cantidadTopos,userID,nombreJugadorMenu,correoJugadorMenu;
+
+    @Override
+    public void onBackPressed(){
+        //En caso de querer permitir volver atrás usa esta llamada: super.onBackPressed();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mp==null){
+            mp= MediaPlayer.create(MenuClass.this,R.raw.victorymenusound);
+
+        }else if(!mp.isPlaying()){
+            mp.start();
+        }
+
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp.pause();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +76,23 @@ public class MenuClass extends AppCompatActivity {
 
             cantidadTopos = findViewById(R.id.cantidadTopos);
             userID = findViewById(R.id.userID);
-            userName = findViewById(R.id.userName);
-            correoElectronicoUser = findViewById(R.id.correoElectronicoUser);
+            correoJugadorMenu = findViewById(R.id.correoJugadorMenu);
+            nombreJugadorMenu = findViewById(R.id.nombreJugadorMenu);
 
         // CODIGO PARA JUGAR PARTIDA
         Jugar.setOnClickListener(view -> {
+            Intent intent = new Intent(MenuClass.this,MapaJuego.class);
 
+            String userIDPlay = userID.getText().toString();
+            String nombreJugadorPlay = nombreJugadorMenu.getText().toString();
+            String cantidadToposPlay = cantidadTopos.getText().toString();
+
+            //MANDAMOS LOS PARÁMETROS
+            intent.putExtra("UID",userIDPlay);
+            intent.putExtra("Topos",cantidadToposPlay);
+            intent.putExtra("NOMBRE",nombreJugadorPlay);
+
+            startActivity(intent);
         });
 
         // CODIGO PARA MIRAR CLASIFICACIONES
@@ -81,9 +116,23 @@ public class MenuClass extends AppCompatActivity {
         //ORDEN DE LOS USUARIOS POR CORREO ELECTRÓNICO, Y COMPARACIÓN CON EL CORREO DEL USUARIO QUE INICIE SESIÓN
         Query query = databaseJugadoresRegistrados.orderByChild("CORREO ELECTRONICO").equalTo(user.getEmail());
         query.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){ //BUCLE PARA RECORRER TODA LA BASE DE DATOS
+
+                    String toposCantidadValor= ""+dataSnapshot.child("Topos").getValue(); //VALOR TOPOS APLASTADOS Y ASIGNACIÓN
+                    cantidadTopos.setText(toposCantidadValor);
+
+                    String userIDValue= ""+dataSnapshot.child("UID").getValue(); //VALOR USER ID Y ASIGNACIÓN
+                    userID.setText(userIDValue);
+
+                    String correoJugadorValue= ""+dataSnapshot.child("CORREO ELECTRONICO").getValue(); //VALOR CORREO JUGADOR Y ASIGNACIÓN
+                    correoJugadorMenu.setText(correoJugadorValue);
+
+                    String nombreJugadorValue= ""+dataSnapshot.child("NOMBRE").getValue(); //VALOR NOMBRE JUGADOR Y ASIGNACIÓN
+                    nombreJugadorMenu.setText(nombreJugadorValue);
+
 
                 }
             }
@@ -107,7 +156,8 @@ public class MenuClass extends AppCompatActivity {
     // MÉTODO PARA COMPROBAR SI EL USUARIO YA INICIÓ SESIÓN Y ASÍ EVITAR QUE VUELVA A TENER QUE INICIARLA
     private void checkUserLogin(){
         if(user != null){
-            Toast.makeText(this, "Jugador actualemente logueado", Toast.LENGTH_SHORT).show();
+            consultaDatabase();
+            Toast.makeText(this, "Jugador actualemente logueado", Toast.LENGTH_LONG).show();
 
         } else  {
             startActivity(new Intent(MenuClass.this, MainActivity.class));
@@ -119,6 +169,6 @@ public class MenuClass extends AppCompatActivity {
     private void CloseSesion(){
         auth.signOut();
         startActivity(new Intent(MenuClass.this, MainActivity.class));
-        Toast.makeText(this, "Sesión cerrada exictosamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sesión cerrada exictosamente", Toast.LENGTH_LONG).show();
          }
     }

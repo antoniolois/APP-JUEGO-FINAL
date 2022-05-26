@@ -14,7 +14,7 @@ public class SplashClass extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         // EL OBJECTIO HANDLER NOS VA A PERMITIR EJECUTAR LAS LINEAS DE CODIGO (DENTRO DEL RUN)EN UN TIEMPO DETERMINADO
-        int duracion_pantalla=5000;// 5 segundos
+        int duracion_pantalla=3000;// 5 segundos
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashClass.this, MenuClass.class);
