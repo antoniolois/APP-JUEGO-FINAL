@@ -13,23 +13,29 @@
         <activity
             android:name=".MapaJuego"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SMASH_TOPO.NoActionBar"/>
         <activity
             android:name=".LoginClass"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SMASH_TOPO.NoActionBar"/>
         <activity
             android:name=".MenuClass"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SMASH_TOPO.NoActionBar"/>
         <activity
             android:name=".RegistroClass"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SMASH_TOPO.NoActionBar"/>
         <activity
             android:name=".SplashClass"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
+
             <intent-filter>
 
                 <!-- ESTAS LINEAS SIRVEN PARA QUE ESTA SEA LA PRIMERA ACTIVIDAD EN EJECUTARSE -->

@@ -66,8 +66,14 @@ public class RegistroClass extends AppCompatActivity {
             }else if(contraseñaCorreo.length()<5){
                 editTextTextPassword.setError("La contraseña debe contener 5 caracteres");
                 editTextTextPassword.setFocusable(true); //// ESTA LINEA OBLIGA A ESCRIBIR DE FORMA CORRECTA LA CONTRASEÑA
+
+            }else if(nombreUsuario.length()>15){
+                editTextTextPersonName.setError("El nombre no puede superar los 15 caracteres");
+                editTextTextPersonName.setFocusable(true); //// ESTA LINEA OBLIGA A ESCRIBIR DE FORMA CORRECTA EL NOMBRE
+                
             }else{
                 RegistrarUsuario(correoElectronico,contraseñaCorreo,nombreUsuario);
+
             }
 
         }); // fin click boton registar

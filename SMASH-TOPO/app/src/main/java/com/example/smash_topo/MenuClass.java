@@ -27,9 +27,8 @@ public class MenuClass extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseJugadoresRegistrados;
 
-    MediaPlayer mp;
 
-
+    //ELEMENTOS DE LA PANTALLA
     Button CerrarSesion,Jugar,Clasificaciones;
     TextView cantidadTopos,userID,nombreJugadorMenu,correoJugadorMenu;
 
@@ -54,6 +53,7 @@ public class MenuClass extends AppCompatActivity {
 
 
 
+        // UNIÓN CON LOS ELEMENTOS DEL LAYOUT
 
             CerrarSesion = findViewById(R.id.boton_cerrar_sesion_menu);
             Jugar = findViewById(R.id.botonJugarMenu);

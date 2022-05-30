@@ -20,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // UNIÓN CON LOS ELEMENTOS DEL LAYOUT
         boton_login= findViewById(R.id.boton_cerrar_sesion_menu);
         boton_registro= findViewById(R.id.boton_registro);
 
-        boton_login.setOnClickListener(view -> {// AL HACER CLCIK EN EL BOTÓN REGISTRO SE EJECUTA LA CLASE LOGIN
+        boton_login.setOnClickListener(view -> {// AL HACER CLCIK EN EL BOTÓN LOGIN SE EJECUTA LA CLASE LOGIN
             Intent intent = new Intent(MainActivity.this, LoginClass.class);
             startActivity(intent);
         });
