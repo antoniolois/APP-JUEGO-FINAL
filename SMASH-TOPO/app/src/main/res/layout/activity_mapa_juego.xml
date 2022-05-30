@@ -52,6 +52,7 @@
                     android:textSize="30sp" />
 
 
+
             </LinearLayout>
 
 
@@ -99,22 +100,25 @@
 
         </LinearLayout>
 
-        <!-- TOPOS -->
+
+        <!-- TOPOS  -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            >
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/topoescenario"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+
                 android:src="@drawable/topo_normal" />
 
 
         </LinearLayout>
+
+
 
 
     </LinearLayout>
