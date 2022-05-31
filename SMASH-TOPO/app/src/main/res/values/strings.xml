@@ -37,11 +37,9 @@
     <string name="contadorEscenario">0</string>
     <string name="nombreJugadorEscenario">------</string>
     <string name="tiempoEscenario">0</string>
-
-
-
-
-
+    <string name="game_over">GAME OVER</string>
+    <string name="topos_aplastados">TOPOS APLASTADOS:</string>
+    <string name="time_out">SE ACABÓ EL TIEMPO</string>
 
 
 </resources>

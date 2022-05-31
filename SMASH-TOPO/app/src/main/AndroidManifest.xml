@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
         <activity
-            android:name=".MapaJuego"
+            android:name=".MapaJuegoClass"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SMASH_TOPO.NoActionBar"/>

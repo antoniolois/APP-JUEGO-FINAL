@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#1FB0FE"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:gravity="center|center_horizontal|center_vertical"
+    >
+
+
+
+        <TextView
+            android:id="@+id/gameOverTitle"
+            style="@style/Widget.AppCompat.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:gravity="center|center_horizontal|center_vertical"
+
+            android:fontFamily="@font/monocoque_demo"
+            android:text="@string/game_over"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            />
+
+        <TextView
+            android:id="@+id/timeOut"
+            android:gravity="center|center_horizontal|center_vertical"
+
+            style="@style/Widget.AppCompat.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/monocoque_demo"
+            android:text="@string/time_out"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFBE0B"
+            android:padding="10dp"
+
+            android:textSize="30sp"
+            android:textStyle="italic"
+            />
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="131dp"
+            android:layout_height="109dp"
+            android:layout_marginTop="15dp"
+
+            app:srcCompat="@drawable/topo_jugador" />
+
+        <TextView
+            android:id="@+id/toposAplastados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/monocoque_demo"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@string/topos_aplastados"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeOut" />
+
+        <TextView
+            android:id="@+id/cantidadToposGameOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/monocoque_demo"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="-"
+            android:textColor="#000000"
+            android:textSize="40sp"
+             />
+
+        <Button
+            android:id="@+id/botonMenuGameOver"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:fontFamily="@font/monocoque_demo"
+            android:padding="15dp"
+            android:text="MENÚ"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:cornerRadius="12dp"
+            app:iconTint="#000000"
+            app:strokeColor="#FFBE0B"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/botonJugarGameOver"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:fontFamily="@font/monocoque_demo"
+            android:padding="15dp"
+            android:text="@string/boton_jugar_menu"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:cornerRadius="12dp"
+            app:iconTint="#000000"
+            app:strokeColor="#FFBE0B"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/botonPuntuacionesGameOver"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:fontFamily="@font/monocoque_demo"
+            android:padding="15dp"
+            android:text="PUNTUACIONES"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:cornerRadius="12dp"
+            app:iconTint="#000000"
+            app:strokeColor="#FFBE0B"
+            app:strokeWidth="3dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

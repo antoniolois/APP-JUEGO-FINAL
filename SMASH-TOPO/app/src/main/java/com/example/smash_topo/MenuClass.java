@@ -1,7 +1,6 @@
 package com.example.smash_topo;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -66,7 +65,7 @@ public class MenuClass extends AppCompatActivity {
 
         // CODIGO PARA JUGAR PARTIDA
         Jugar.setOnClickListener(view -> {
-            Intent intent = new Intent(MenuClass.this,MapaJuego.class);
+            Intent intent = new Intent(MenuClass.this, MapaJuegoClass.class);
 
             String userIDPlay = userID.getText().toString();
             String nombreJugadorPlay = nombreJugadorMenu.getText().toString();
