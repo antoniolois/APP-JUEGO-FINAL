@@ -20,11 +20,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class RegistroClass extends AppCompatActivity {
 
     // DECLARACIÓN DE VARIABLES
     EditText editTextTextEmailAddress, editTextTextPassword, editTextTextPersonName;
     TextView fecha_registro;
+    CircleImageView foto_perfil_player;
     Button boton_registar;
 
     FirebaseAuth fireBaseAutenticacion; // AUTENTICACIÓN DE FIREBASE
@@ -38,6 +41,7 @@ public class RegistroClass extends AppCompatActivity {
         editTextTextPersonName= findViewById(R.id.editTextTextPersonNameLogin); // NOMBRE
         fecha_registro= findViewById(R.id.fecha_registro); // FECHA DE REGISTRO
         boton_registar= findViewById(R.id.boton_registar); // BOTON PARA REGISTRARSE
+        foto_perfil_player = findViewById(R.id.foto_perfil_player); //IMAGEN DEL JUGADOR
 
         fireBaseAutenticacion = FirebaseAuth.getInstance();
 
@@ -73,7 +77,6 @@ public class RegistroClass extends AppCompatActivity {
                 
             }else{
                 RegistrarUsuario(correoElectronico,contraseñaCorreo,nombreUsuario);
-
             }
 
         }); // fin click boton registar
@@ -104,6 +107,7 @@ public class RegistroClass extends AppCompatActivity {
                         DatosPLAYER.put("NOMBRE", nombreStringUser);
                         DatosPLAYER.put("FECHA", fechaStringUser);
                         DatosPLAYER.put("Topos", contadorTopos);
+                        DatosPLAYER.put("Imagen Jugador","foto_perfil_player");
 
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference reference = database.getReference("DATABASE JUGADORES REGISTRADOS");

@@ -8,60 +8,72 @@
     android:background="#1FB0FE"
     >
 
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="118dp"
+        android:layout_height="105dp"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="16dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/cantidadTopos"
-        app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/trophy_animation" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="131dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual"
+        app:srcCompat="@drawable/topo_golpeado3" />
+
     <TextView
         android:id="@+id/puntuacionJugadorActual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="39dp"
+        android:layout_width="243dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/monocoque_demo"
+        android:gravity="center"
         android:text="@string/topos_puntuacion_jugaor"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/cantidadTopos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="66dp"
         android:fontFamily="@font/monocoque_demo"
         android:text="@string/cantidad_topos"
         android:textColor="#000000"
         android:textSize="40sp"
-        app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/puntuacionJugadorActual"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/userID"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="35dp"
         android:fontFamily="@font/monocoque_demo"
         android:text="--"
@@ -71,6 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correoJugadorMenu" />
+
 
     <TextView
         android:id="@+id/correoJugadorMenu"
@@ -91,96 +104,130 @@
 
     <TextView
         android:id="@+id/nombreJugadorMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="35dp"
+        android:layout_width="198dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/monocoque_demo"
+        android:gravity="center"
         android:text="--"
         android:textAlignment="center"
         android:textColor="#FFBE0B"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toStartOf="@+id/foto_perfil_player"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/foto_perfil_player"
+        android:layout_width="127dp"
+        android:layout_height="117dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="26dp"
+        android:src="@drawable/player_image"
+        app:layout_constraintBottom_toTopOf="@+id/correoJugadorMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nombreJugadorMenu"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="215dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userID">
 
+                <Button
+                    android:id="@+id/botonJugarMenu"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTintMode="src_in"
+                    android:fontFamily="@font/monocoque_demo"
+                    android:text="@string/boton_jugar_menu"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:cornerRadius="12dp"
+                    app:iconTint="#000000"
+                    app:strokeColor="#FFBE0B"
+                    app:strokeWidth="3dp" />
 
-        <Button
-            android:id="@+id/botonJugarMenu"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#FFFFFF"
-            android:backgroundTintMode="src_in"
-            android:fontFamily="@font/monocoque_demo"
-            android:text="@string/boton_jugar_menu"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:cornerRadius="12dp"
-            app:iconTint="#000000"
-            app:strokeColor="#FFBE0B"
-            app:strokeWidth="3dp" />
+                <Button
+                    android:id="@+id/clasifiacionJugadoresPuntuacion"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTintMode="src_in"
+                    android:fontFamily="@font/monocoque_demo"
+                    android:text="@string/puntuaciones_jugadores"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:cornerRadius="12dp"
+                    app:iconTint="#000000"
+                    app:strokeColor="#FFBE0B"
+                    app:strokeWidth="3dp" />
 
-        <Button
-            android:id="@+id/clasifiacionJugadoresPuntuacion"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#FFFFFF"
-            android:backgroundTintMode="src_in"
-            android:fontFamily="@font/monocoque_demo"
-            android:text="@string/puntuaciones_jugadores"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:cornerRadius="12dp"
-            app:iconTint="#000000"
-            app:strokeColor="#FFBE0B"
-            app:strokeWidth="3dp" />
+                <Button
+                    android:id="@+id/botonEditarPerfil"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTintMode="src_in"
+                    android:fontFamily="@font/monocoque_demo"
+                    android:text="@string/editar_perfil"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:cornerRadius="12dp"
+                    app:iconTint="#000000"
+                    app:strokeColor="#FFBE0B"
+                    app:strokeWidth="3dp" />
 
 
-        <!-- BOTON CERRAR SESIÓN -->
-        <Button
-            android:id="@+id/boton_cerrar_sesion_menu"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F04646"
-            android:text="@string/boton_cerrar_sesion_menu"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+                <!-- BOTON CERRAR SESIÓN -->
+                <Button
+                    android:id="@+id/boton_cerrar_sesion_menu"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#F04646"
+                    android:text="@string/boton_cerrar_sesion_menu"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="149dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="35dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="122dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/bangers"
+        android:gravity="center"
+        android:text="ÚLTIMA PUNTUACIÓN"
+        android:textColor="#000000"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
-        app:layout_constraintTop_toBottomOf="@+id/puntuacionJugadorActual"
-        app:srcCompat="@drawable/topo_golpeado3" />
+        app:layout_constraintStart_toEndOf="@+id/puntuacionJugadorActual"
+        app:layout_constraintTop_toBottomOf="@+id/cantidadTopos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

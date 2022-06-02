@@ -9,18 +9,6 @@
     >
 
         <!-- CORREO ELECTRONICO -->
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieAnimationView3"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/register_animation" />
 
         <!-- CONTRASEÑA CORREO ELECTRONICO -->
 
@@ -29,61 +17,67 @@
 
         <!-- BOTON REGISTRO -->
 
-        <ImageView
-            android:id="@+id/email_icon"
-            android:layout_width="60dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="78dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="38dp"
-            app:layout_constraintBottom_toTopOf="@+id/password_icon"
+        <!-- FECHA DE REGISTRO -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView3"
+            android:layout_width="215dp"
+            android:layout_height="224dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"
-            app:srcCompat="@drawable/email_icon" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/register_animation" />
+
+        <Button
+            android:id="@+id/boton_registar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="106dp"
+            android:backgroundTint="#F04646"
+            android:text="REGISTRARSE"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fecha_registro" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddressLogin"
+            android:id="@+id/editTextTextPersonNameLogin"
             android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="49dp"
-            android:hint="@string/email_registro"
+            android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="32dp"
+            android:hint="@string/name"
             android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
+            android:inputType="textPersonName"
             android:textColorHint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/fecha_registro"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/email_icon"
-            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
-
-        <ImageView
-            android:id="@+id/password_icon"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginEnd="17dp"
-            app:layout_constraintEnd_toStartOf="@+id/etPasswordLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_icon"
-            app:srcCompat="@drawable/password_icon" />
+            app:layout_constraintHeight_min="48dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/person_icon_login" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etPasswordLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="208dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginBottom="35dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="25dp"
             android:textColorHint="#000000"
             app:boxStrokeColor="#000000"
             app:endIconTint="#000000"
             app:hintTextColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonNameLogin"
             app:layout_constraintStart_toEndOf="@+id/password_icon"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddressLogin"
             app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -99,59 +93,63 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="60dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="33dp"
+            app:layout_constraintBottom_toTopOf="@+id/password_icon"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddressLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"
+            app:layout_constraintVertical_bias="0.88"
+            app:srcCompat="@drawable/email_icon" />
+
+        <ImageView
             android:id="@+id/person_icon_login"
             android:layout_width="71dp"
             android:layout_height="52dp"
-            android:layout_marginStart="69dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonNameLogin"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="68dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/fecha_registro"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_icon"
             app:srcCompat="@drawable/name_icon" />
 
         <EditText
-            android:id="@+id/editTextTextPersonNameLogin"
+            android:id="@+id/editTextTextEmailAddressLogin"
             android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_height="52dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="55dp"
-            android:hint="@string/name"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="28dp"
+            android:hint="@string/email_registro"
             android:importantForAutofill="no"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
             android:textColorHint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/etPasswordLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_min="48dp"
-            app:layout_constraintStart_toEndOf="@+id/person_icon_login"
-            app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout" />
+            app:layout_constraintStart_toEndOf="@+id/email_icon" />
 
-        <Button
-            android:id="@+id/boton_registar"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="106dp"
-            android:backgroundTint="#F04646"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:text="REGISTRARSE"
-            app:cornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+        <ImageView
+            android:id="@+id/password_icon"
+            android:layout_width="90dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/person_icon_login"
+            app:layout_constraintEnd_toStartOf="@+id/etPasswordLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fecha_registro" />
+            app:srcCompat="@drawable/password_icon" />
 
-        <!-- FECHA DE REGISTRO -->
         <TextView
             android:id="@+id/fecha_registro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="129dp"
             android:fontFamily="@font/monocoque_demo"
             android:text="FECHA DE REGISTRO"
@@ -159,8 +157,38 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonNameLogin" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/foto_perfil_player"
+            android:layout_width="148dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/player_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.833"
+            app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="151dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/bangers"
+            android:text="FOTO DE PERFIL"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+            app:layout_constraintTop_toBottomOf="@+id/foto_perfil_player" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
