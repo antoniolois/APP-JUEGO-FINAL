@@ -127,7 +127,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="26dp"
-        android:src="@drawable/player_image"
         app:layout_constraintBottom_toTopOf="@+id/correoJugadorMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nombreJugadorMenu"

@@ -245,7 +245,7 @@ public class MenuClass extends AppCompatActivity {
         StorageReference storageReference = storageReferenceUser.child(pathAlmacenamientoUserName);
         storageReference.putFile(imagen_uri).addOnSuccessListener(taskSnapshot -> {
             Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-            while(!uriTask.isSuccessful()){
+            while(!uriTask.isSuccessful());
                 Uri downloadUri = uriTask.getResult();
 
                 if(uriTask.isSuccessful()){
@@ -264,7 +264,7 @@ public class MenuClass extends AppCompatActivity {
                     Toast.makeText(MenuClass.this, "ERROR", Toast.LENGTH_SHORT).show();
                 }
 
-            }
+
         }).addOnFailureListener(e -> {
             Toast.makeText(MenuClass.this,"ERROR: "+e.getMessage(),Toast.LENGTH_SHORT).show();
 
