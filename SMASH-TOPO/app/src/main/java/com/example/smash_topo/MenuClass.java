@@ -1,7 +1,10 @@
 package com.example.smash_topo;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.widget.Button;
@@ -11,12 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +31,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -45,11 +54,22 @@ public class MenuClass extends AppCompatActivity {
     TextView cantidadTopos,userID,nombreJugadorMenu,correoJugadorMenu,botonEditarPerfil;
     CircleImageView foto_perfil_player;
 
+    //ELEMENTOS ALMACENAMIENTO CAMBIO DE IMAGEN
+    private StorageReference storageReferenceUser;
+    private String pathAlmacenamiento="ImagenPerfil/*";
+    private String [] permisoAlmacenar;
+    private Uri imagen_uri;
+    private String perfilJugador;
+
+    //codigos de permisos y solictudes
+    private static  final int codigoSolicitudAlmacenamiento=8520;
+    private static  final int codigoSeleccionImagen=7410;
+
+
     @Override
     public void onBackPressed(){
         //En caso de querer permitir volver atrás usa esta llamada: super.onBackPressed();
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +84,10 @@ public class MenuClass extends AppCompatActivity {
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseJugadoresRegistrados=firebaseDatabase.getReference("DATABASE JUGADORES REGISTRADOS");
 
+
+        //INICIALIZACION DEL ALMACENANMIETNO
+        storageReferenceUser = FirebaseStorage.getInstance().getReference();
+        permisoAlmacenar = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
 
             // UNIÓN CON LOS ELEMENTOS DEL LAYOUT
@@ -99,20 +123,14 @@ public class MenuClass extends AppCompatActivity {
 
         });
 
-
         // CODIGO PARA CERRAR SESION
         CerrarSesion.setOnClickListener(view -> {
             CloseSesion();
         });
 
-
         botonEditarPerfil.setOnClickListener(view -> {
-
             EditarDatosPerfil();
         });
-
-
-
 
     }
     //MÉTODO PARA EDITAR DATOS DEL PERFIL
@@ -122,14 +140,12 @@ public class MenuClass extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setItems(opciones, (dialogInterface, i) -> {
-            //switch para las dos opciones
-            switch (i){
-                case 0:
-                    CambiarImagenPerfil();
-                case 1:
-                    CambiarNombrePerfil("NOMBRE");
+            if(i==0) {
+                perfilJugador = "Imagen Jugador";
+                CambiarImagenPerfil();
+            }else if (i==1) {
+                CambiarNombrePerfil("NOMBRE");
             }
-
         });
         builder.create().show(); //visualización del builder
     }
@@ -174,6 +190,102 @@ public class MenuClass extends AppCompatActivity {
 
     // MÉTODO PARA CAMBIAR LA IMAGEN DE PERFIL
     private void CambiarImagenPerfil() {
+        String [] opciones ={"ACCEDER A LA GALERÍA"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("CAMBIO DE LA IMAGEN DE PERFIL");
+        builder.setItems(opciones, (dialogInterface, i) -> {
+            //switch para las dos opciones
+            switch (i){
+                case 0:
+                    if(!checkStoragePermissions()){
+                        SolicitarPermisos(); //activar permisos
+                    }else{
+                        imageEleccion();
+                    }
+            }
+        });
+        builder.create().show();
+    }
+
+    //ABRIR LA GALERIA
+    private void imageEleccion() {
+        Intent intentGaleria = new Intent(Intent.ACTION_PICK);
+        intentGaleria.setType("image/*");
+        startActivityForResult(intentGaleria,codigoSeleccionImagen);
+    }
+
+    //MÉTODO DE SOLICUTUD DE LOS PERMISOS
+    private void SolicitarPermisos() {
+        requestPermissions(permisoAlmacenar,codigoSolicitudAlmacenamiento);
+    }
+    //MÉTODO QUE COMPRUEBa LOS PERMISOS
+    private boolean checkStoragePermissions() {
+        boolean permiso = ContextCompat.checkSelfPermission(MenuClass.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)==(PackageManager.PERMISSION_GRANTED);
+        return permiso;
+    }
+
+    //ACTIVACION CUANDO EL JUGADOR YA TIENE SELECCINADA UNA IAMGEN
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(resultCode == RESULT_OK){
+            if(requestCode==codigoSeleccionImagen){
+                imagen_uri=data.getData();
+                uploadImage(imagen_uri);
+                
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    //actualizar base de datos
+    private void uploadImage(Uri imagen_uri) {
+        String pathAlmacenamientoUserName = pathAlmacenamiento + ""+ perfilJugador +""+user.getUid();
+        StorageReference storageReference = storageReferenceUser.child(pathAlmacenamientoUserName);
+        storageReference.putFile(imagen_uri).addOnSuccessListener(taskSnapshot -> {
+            Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+            while(!uriTask.isSuccessful()){
+                Uri downloadUri = uriTask.getResult();
+
+                if(uriTask.isSuccessful()){
+                    HashMap<String,Object> resultadoImage = new HashMap<>();
+                    resultadoImage.put(perfilJugador,downloadUri.toString());
+
+                    databaseJugadoresRegistrados.child(user.getUid()).updateChildren(resultadoImage)
+                            .addOnSuccessListener(unused -> {
+                                Toast.makeText(MenuClass.this,"IMAGEN ACTUALIZADA",Toast.LENGTH_SHORT).show();
+
+                            }).addOnFailureListener(e -> {
+                        Toast.makeText(MenuClass.this,"ERROR: "+e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                    });
+                }else {
+                    Toast.makeText(MenuClass.this, "ERROR", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }).addOnFailureListener(e -> {
+            Toast.makeText(MenuClass.this,"ERROR: "+e.getMessage(),Toast.LENGTH_SHORT).show();
+
+        });
+    }
+
+    //METODO PARA ELECCION DEL USUARIO EN LOS BOTONES PERMITIR/DENEGAR EN EL DIALOGO
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case codigoSolicitudAlmacenamiento:
+                if(grantResults.length>0){
+                    boolean permisoAlmacenamientoCorrecto = grantResults[0]== PackageManager.PERMISSION_GRANTED;
+                    if(permisoAlmacenamientoCorrecto){
+                        imageEleccion();
+                    }else{
+                        Toast.makeText(MenuClass.this,"ES NECESARIO HABILITAR LOS PERMISOS DE ALAMCENAMIENTO",Toast.LENGTH_SHORT).show();
+                    }
+                }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     // MÉTODO PARA PODER REALIZAR CONSULTAS A LA DATABASE
@@ -215,8 +327,6 @@ public class MenuClass extends AppCompatActivity {
         });
     }
 
-
-
     //ESTE MÉTODO SE EJECUTARÁ CUANDO LA APP ESTÉ ABIERTA
     @Override
     protected  void onStart(){
@@ -224,6 +334,7 @@ public class MenuClass extends AppCompatActivity {
         super.onStart();
 
     }
+
     // MÉTODO PARA COMPROBAR SI EL USUARIO YA INICIÓ SESIÓN Y ASÍ EVITAR QUE VUELVA A TENER QUE INICIARLA
     private void checkUserLogin(){
         if(user != null){
