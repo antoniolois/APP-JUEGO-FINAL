@@ -33,7 +33,6 @@
     <string name="editar_perfil">EDITAR PERFIL</string>
 
 
-
     <!-- PANTALLA ESCENARIO-->
     <string name="contadorEscenario">0</string>
     <string name="nombreJugadorEscenario">------</string>
@@ -41,6 +40,9 @@
     <string name="game_over">GAME OVER</string>
     <string name="topos_aplastados">TOPOS APLASTADOS:</string>
     <string name="time_out">SE ACABÓ EL TIEMPO</string>
+    <string name="nombreCardScreen">Nombre</string>
+    <string name="correoCardScreen">Correo</string>
+    <string name="puntuacionCardScreen">puntuacion</string>
 
 
 </resources>

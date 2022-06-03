@@ -120,6 +120,8 @@ public class MenuClass extends AppCompatActivity {
 
         // CODIGO PARA MIRAR CLASIFICACIONES
         Clasificaciones.setOnClickListener(view -> {
+            Intent intent = new Intent(MenuClass.this,ClasificacionesClass.class);
+            startActivity(intent);
 
         });
 
