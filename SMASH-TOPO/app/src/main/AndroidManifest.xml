@@ -14,9 +14,11 @@
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
         <activity
             android:name=".PlayerClass"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ClasificacionesClass"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MapaJuegoClass"

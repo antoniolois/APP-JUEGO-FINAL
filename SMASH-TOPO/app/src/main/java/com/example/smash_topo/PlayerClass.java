@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PlayerClass extends AppCompatActivity {
+import com.google.firebase.database.Exclude;
+
+public class PlayerClass{
     //DECLARACION DE VARIABLES
     String correoElectronico,fechaRegistro,imagenJugador,nombreJugador,passwordJugador,userID;
     int toposAplastados;
 
-    //CONSTRUCTOR
-    public PlayerClass(){
+    public  PlayerClass(){
 
     }
 
@@ -64,9 +65,11 @@ public class PlayerClass extends AppCompatActivity {
         return passwordJugador;
     }
 
+
     public void setPasswordJugador(String passwordJugador) {
         this.passwordJugador = passwordJugador;
     }
+
 
     public String getUserID() {
         return userID;
@@ -85,9 +88,4 @@ public class PlayerClass extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_class);
-    }
 }

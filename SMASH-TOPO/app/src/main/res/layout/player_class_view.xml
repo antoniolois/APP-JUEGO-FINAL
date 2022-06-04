@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#1FB0FE"
-    tools:context=".PlayerClass">
+   >
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -20,6 +19,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:srcCompat="@drawable/player_image"/>
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +37,7 @@
                 android:text="@string/nombreCardScreen"
                 android:textColor="#000000"
                 android:textSize="30sp" />
+
             <TextView
                 android:id="@+id/puntuacionJugadorCardScreen"
                 android:layout_width="match_parent"
@@ -44,9 +45,10 @@
                 android:fontFamily="@font/monocoque_demo"
                 android:gravity="center"
                 android:padding="10dp"
-                android:textColor="#FFBE0B"
                 android:text="@string/puntuacionCardScreen"
+                android:textColor="#FFBE0B"
                 android:textSize="30sp" />
+
             <TextView
                 android:id="@+id/correoJugadorCardScreen"
                 android:layout_width="match_parent"
@@ -57,7 +59,6 @@
                 android:text="@string/correoCardScreen"
                 android:textColor="#000000"
                 android:textSize="15sp" />
-
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,10 +15,10 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AdapterClass extends  RecyclerView.Adapter<AdapterClass.MyHolder>{
+public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyHolder>{
 
-    private Context context;
-    private List<PlayerClass> playerClassList;
+    Context context;
+    List<PlayerClass> playerClassList;
 
     public AdapterClass(Context context, List<PlayerClass> playerClassList) {
         this.context = context;
@@ -28,46 +27,17 @@ public class AdapterClass extends  RecyclerView.Adapter<AdapterClass.MyHolder>{
 
     @NonNull
     @Override
-    //AGREGACION DEL XML A LA ACTIVIDAD
     public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_clasificaciones_class,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_clasificaciones_class, parent, false);
         return new MyHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-        //OBTENCION DE LOS DATOS DE PLAYER CLASS
-        String imagenPlayerUrl = playerClassList.get(position).getImagenJugador();
-        String nombrePlayer = playerClassList.get(position).getNombreJugador();
-        String correoPlayer = playerClassList.get(position).getCorreoElectronico();
-        int toposPlayer = playerClassList.get(position).getToposAplastados();String toposPlayerString = String.valueOf(toposPlayer); //conversion a string
-
-        holder.nombreJugadorCardScreen.setText(nombrePlayer);
-        holder.correoJugadorCardScreen.setText(correoPlayer);
-        holder.puntuacionJugadorCardScreen.setText(toposPlayerString);
-        try{
-            Picasso.get().load(imagenPlayerUrl).into(holder.imagenPlayerCard);
-
-        }catch (Exception e){
-            "Error: "+e.getMessage();
-        }
-
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-    public class MyHolder extends RecyclerView.ViewHolder {
-
+    public static class MyHolder extends RecyclerView.ViewHolder {
         //DECLARACIÓN
         CircleImageView imagenPlayerCard;
-        TextView nombreJugadorCardScreen,puntuacionJugadorCardScreen,correoJugadorCardScreen;
+        TextView nombreJugadorCardScreen, puntuacionJugadorCardScreen, correoJugadorCardScreen;
 
-
-        public MyHolder(@NonNull View itemView) {
+        public MyHolder(View itemView) {
             super(itemView);
 
             //INICIALIZACION
@@ -78,4 +48,31 @@ public class AdapterClass extends  RecyclerView.Adapter<AdapterClass.MyHolder>{
 
         }
     }
+    @Override
+    public void onBindViewHolder( @NonNull MyHolder holder, int position) {
+        //OBTENCION DE LOS DATOS DE PLAYER CLASS
+        String imagenPlayerUrl = playerClassList.get(position).getImagenJugador();
+        String nombrePlayer = playerClassList.get(position).getNombreJugador();
+        String correoPlayer = playerClassList.get(position).getCorreoElectronico();
+        int toposPlayer = playerClassList.get(position).getToposAplastados();
+        String toposPlayerString = String.valueOf(toposPlayer); //conversion a string
+
+
+        holder.nombreJugadorCardScreen.setText(nombrePlayer);
+        holder.correoJugadorCardScreen.setText(correoPlayer);
+        holder.puntuacionJugadorCardScreen.setText(toposPlayerString);
+        try {
+            Picasso.get().load(imagenPlayerUrl).into(holder.imagenPlayerCard);
+        } catch (Exception ignored) {
+        }
+
+    }
+
+    @Override
+    public int getItemCount() {
+        //devuelve el tamaño de la lista de jugadores
+        return playerClassList.size();
+    }
+
+
 }
