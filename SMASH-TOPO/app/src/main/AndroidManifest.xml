@@ -3,6 +3,9 @@
     package="com.example.smash_topo">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -12,10 +15,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.SMASH_TOPO.NoActionBar">
-        <activity
-            android:name=".PlayerClass"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+
         <activity
             android:name=".ClasificacionesClass"
             android:screenOrientation="portrait"

@@ -43,6 +43,7 @@
     <string name="nombreCardScreen">Nombre</string>
     <string name="correoCardScreen">Correo</string>
     <string name="puntuacionCardScreen">puntuacion</string>
+    <string name="clasifiaciones_game_over">CLASIFIACIONES</string>
 
 
 </resources>

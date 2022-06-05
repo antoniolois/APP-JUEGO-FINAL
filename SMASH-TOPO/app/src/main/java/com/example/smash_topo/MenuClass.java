@@ -48,7 +48,6 @@ public class MenuClass extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseJugadoresRegistrados;
 
-
     //ELEMENTOS DE LA PANTALLA
     Button CerrarSesion,Jugar,Clasificaciones;
     TextView cantidadTopos,userID,nombreJugadorMenu,correoJugadorMenu,botonEditarPerfil;
@@ -90,17 +89,17 @@ public class MenuClass extends AppCompatActivity {
         permisoAlmacenar = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
 
-            // UNIÓN CON LOS ELEMENTOS DEL LAYOUT
-            CerrarSesion = findViewById(R.id.boton_cerrar_sesion_menu);
-            Jugar = findViewById(R.id.botonJugarMenu);
-            Clasificaciones = findViewById(R.id.clasifiacionJugadoresPuntuacion);
+        // UNIÓN CON LOS ELEMENTOS DEL LAYOUT
+        CerrarSesion = findViewById(R.id.boton_cerrar_sesion_menu);
+        Jugar = findViewById(R.id.botonJugarMenu);
+        Clasificaciones = findViewById(R.id.clasifiacionJugadoresPuntuacion);
 
-            cantidadTopos = findViewById(R.id.cantidadTopos);
-            userID = findViewById(R.id.userID);
-            correoJugadorMenu = findViewById(R.id.correoJugadorMenu);
-            nombreJugadorMenu = findViewById(R.id.nombreJugadorMenu);
-            foto_perfil_player = findViewById(R.id.foto_perfil_player);
-            botonEditarPerfil = findViewById(R.id.botonEditarPerfil);
+        cantidadTopos = findViewById(R.id.cantidadTopos);
+        userID = findViewById(R.id.userID);
+        correoJugadorMenu = findViewById(R.id.correoJugadorMenu);
+        nombreJugadorMenu = findViewById(R.id.nombreJugadorMenu);
+        foto_perfil_player = findViewById(R.id.foto_perfil_player);
+        botonEditarPerfil = findViewById(R.id.botonEditarPerfil);
 
         // CODIGO PARA JUGAR PARTIDA
         Jugar.setOnClickListener(view -> {
@@ -120,8 +119,9 @@ public class MenuClass extends AppCompatActivity {
 
         // CODIGO PARA MIRAR CLASIFICACIONES
         Clasificaciones.setOnClickListener(view -> {
-            Intent intent = new Intent(MenuClass.this,ClasificacionesClass.class);
-            startActivity(intent);
+            //Intent intent = new Intent(MenuClass.this,ClasificacionesClass.class);
+            //startActivity(intent);
+            Toast.makeText(MenuClass.this,"PROXIMAMENTE...",Toast.LENGTH_SHORT).show();
 
         });
 
@@ -235,7 +235,6 @@ public class MenuClass extends AppCompatActivity {
             if(requestCode==codigoSeleccionImagen){
                 imagen_uri=data.getData();
                 uploadImage(imagen_uri);
-                
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -276,16 +275,15 @@ public class MenuClass extends AppCompatActivity {
     //METODO PARA ELECCION DEL USUARIO EN LOS BOTONES PERMITIR/DENEGAR EN EL DIALOGO
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case codigoSolicitudAlmacenamiento:
-                if(grantResults.length>0){
-                    boolean permisoAlmacenamientoCorrecto = grantResults[0]== PackageManager.PERMISSION_GRANTED;
-                    if(permisoAlmacenamientoCorrecto){
-                        imageEleccion();
-                    }else{
-                        Toast.makeText(MenuClass.this,"ES NECESARIO HABILITAR LOS PERMISOS DE ALAMCENAMIENTO",Toast.LENGTH_SHORT).show();
-                    }
+        if (requestCode == codigoSolicitudAlmacenamiento) {
+            if (grantResults.length > 0) {
+                boolean permisoAlmacenamientoCorrecto = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                if (permisoAlmacenamientoCorrecto) {
+                    imageEleccion();
+                } else {
+                    Toast.makeText(MenuClass.this, "ES NECESARIO HABILITAR LOS PERMISOS DE ALAMCENAMIENTO", Toast.LENGTH_SHORT).show();
                 }
+            }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }

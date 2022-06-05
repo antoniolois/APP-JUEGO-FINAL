@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed(){
         //En caso de querer permitir volver atrás usa esta llamada: super.onBackPressed();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +35,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-
-
     }
-
 }

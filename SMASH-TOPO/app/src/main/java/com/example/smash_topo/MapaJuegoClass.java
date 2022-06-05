@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,17 +32,13 @@ import java.util.Random;
 
 public class MapaJuegoClass extends AppCompatActivity {
 
-    @Override
-    public void onBackPressed(){
-        //En caso de querer permitir volver atrás usa esta llamada: super.onBackPressed();
-    }
 
     //VARIABLES
     String UID, NOMBRE, Topos;
     TextView contadorToposEscenario, nombreJugadorEscenario, tiempoEscenario;
     ImageView topoescenario;
 
-    Random posicionAleatoria;
+
 
     //VARIABLES PARA MEDIDA PANTALLA
     int pantalla_ancho;
@@ -51,9 +48,11 @@ public class MapaJuegoClass extends AppCompatActivity {
     Dialog dialog;
     boolean GameOverBoolean = false;
 
+    //TOPOS
+    Random posicionAleatoria;
     int contadorTopos;
 
-
+    //FIREBASE
     FirebaseDatabase firebaseDatabase;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
@@ -82,8 +81,6 @@ public class MapaJuegoClass extends AppCompatActivity {
         firebaseUser = firebaseAuth.getCurrentUser(); //para obtener los datos del usuario que inicia sesion
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseJugadores= firebaseDatabase.getReference("DATABASE JUGADORES REGISTRADOS");
-
-
 
         //RECUPERAMOS DATOS
         Bundle intent = getIntent().getExtras();
@@ -119,11 +116,9 @@ public class MapaJuegoClass extends AppCompatActivity {
 
                 // INVOCACIÓN DE UN HANDLER PARA VOLVER A LA IMAGEN INICIAL
                 new Handler().postDelayed(() -> {
-
                     topoescenario.setImageResource(R.drawable.topo_normal); //CAMBIO DE IMAGEN DEL TOPO
                     MovimientoTopo(); //colocación del topo
-
-                },150); //TIEMPO EN MILISEGUNDOS EN EL QUE TARDA EN VOLVER
+                },100); //TIEMPO EN MILISEGUNDOS EN EL QUE TARDA EN VOLVER
             }
 
         });
@@ -178,7 +173,6 @@ public class MapaJuegoClass extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 long tiempoRestante = millisUntilFinished/1000;
                 tiempoEscenario.setText(String.valueOf(tiempoRestante));
-
             }
 
             @Override
@@ -188,12 +182,8 @@ public class MapaJuegoClass extends AppCompatActivity {
                 GameOverBoolean = true;
                 MensajeGameOver();
                 guadrarDatosPlayer("Topos",contadorTopos); //cuando el contadpr llegue a 0 se actualiza la informacion del jugador.
-
-
             }
-
         }.start();
-
     }
 
     private void MensajeGameOver() {
@@ -201,6 +191,7 @@ public class MapaJuegoClass extends AppCompatActivity {
         //DECLARACIÓN
         TextView cantidadToposGameOver;
         Button botonJugarGameOver,botonMenuGameOver,botonPuntuacionesGameOver;
+
 
         //CONEXIÓN
         dialog.setContentView(R.layout.game_over_screen);
@@ -225,6 +216,9 @@ public class MapaJuegoClass extends AppCompatActivity {
         botonMenuGameOver.setOnClickListener(view -> {
             Intent intent = new Intent(MapaJuegoClass.this, MenuClass.class);
             startActivity(intent);
+        });
+        botonPuntuacionesGameOver.setOnClickListener(v -> {
+            Toast.makeText(MapaJuegoClass.this,"PROXIMAMENTE...",Toast.LENGTH_SHORT).show();
         });
 
         dialog.show();

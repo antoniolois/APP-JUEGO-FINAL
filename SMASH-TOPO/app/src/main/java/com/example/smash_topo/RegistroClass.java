@@ -29,8 +29,8 @@ public class RegistroClass extends AppCompatActivity {
     TextView fecha_registro;
     CircleImageView foto_perfil_player;
     Button boton_registar;
-
-    FirebaseAuth fireBaseAutenticacion; // AUTENTICACIÓN DE FIREBASE
+    // AUTENTICACIÓN DE FIREBASE
+    FirebaseAuth fireBaseAutenticacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,7 +118,6 @@ public class RegistroClass extends AppCompatActivity {
                     }else{
                         Toast.makeText(RegistroClass.this, "Error", Toast.LENGTH_LONG).show();
                     }
-
 
                 }).addOnFailureListener(e -> { // EN CASO DE QUE EL REGISTRO SE EFECTUE DE MANERA INCORRECTA SE MUESTRA UN MENSAJE EN PANTALLA
             Toast.makeText(RegistroClass.this, "Error: "+e.getMessage(), Toast.LENGTH_LONG).show();
